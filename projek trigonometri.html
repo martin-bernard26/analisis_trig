@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:grey;
+        }
+        #judul{
+            text-align:center;
+            font-size:40px;
+            font-family:'Bauhaus 93';
+            color:yellow;
+            text-shadow:2px 2px 2px red;
+        }
+        #posisi{
+            display:flex;
+            justify-content:center;
+        }
+        #posisi2{
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            width:40%;
+            background-color:pink;
+            margin-left:10px;
+            border:2px solid red;
+        }
+        .bag1{
+            font-size:20px;
+            font-family:broadway;
+            margin:5px;
+            width:250px;
+            height:20;
+        }
+        #rumus{
+            display:none;
+            font-size:20px;
+            font-weight:bold;
+            border:2px solid black;
+            border-radius:10px;
+            padding:5px;
+            margin:5px;
+            cursor:pointer;
+        }
+        #latihan{
+            font-size:20px;
+            width:100px;
+            height:30px;
+            font-family:Arial;
+            font-weight:bold;
+            margin:5px;
+            background-color:cadetblue;
+            color:black;
+        }
+        .latihan_trig{
+            width:200px;
+            height:30px;
+            font-family:arial;
+            font-weight:bold;
+            background-color:chartreuse;
+            color:black;
+            font-size:20px;
+            text-align:center
+        }
+        #posisi3{
+            display:none;
+            background-color:orange;
+            margin-top:10px;
+            padding:5px;
+        }
+        #posisi4{
+            display:flex;
+            justify-content: center;
+        }
+        .latihan1{
+            width:25%;
+            padding:5px;
+            margin:10px;
+            text-align:center;
+            border:2px solid black;
+            display:none;
+        }
+        #subjudul1 ol{
+            border:1px solid yellow;
+            width:400px;
+            font-size:20px;
+            font-weight:bold;
+            padding:30px;
+            background-color:bisque;
+            box-sizing:border-box;
+            border-radius:5px;
+        }
+        #subjudul1 li{
+            border:2px solid lightblue;
+            margin:3px;
+            border-radius:5px;
+            background-color:darkgrey;
+        }
+        li a{
+            text-decoration:none;
+            color:black;
+        }
+        #subjudul1{
+            background-color:orange;
+            padding:5px;
+            width:500px;
+            margin-bottom:10px;
+            padding-left:100px;
+        }
+        #keterangan1 div,#keterangan2 div,#keterangan3 div, #keterangan5 > div, #keterangan6 > div, #keterangan7 > div {
+            font-size:20px;
+            border:2px solid black;
+            border-radius:5px;
+            padding:5px;
+            text-align:center;
+            background-color:cyan;
+            margin:10px;
+        }
+        #subjudul5 tr>td:not(.warna){
+            width:20%;
+            font-size:20px;
+            text-align:center;
+            border:2px solid black;
+            background-color:white;
+        }
+        .warna{
+            background-color:yellow;
+            font-size:20px;
+            text-align:center;
+        }
+        #subjudul5 tr>td:first-child:not(.warna){
+            background-color:wheat;
+        }
+        #soal{
+            width:30%;
+            height:50px;
+            border:2px solid black;
+            border-radius:10px;
+            text-align:center;
+            font-size:20px;
+            margin:10px;
+        }
+        #keterangan4{
+            overflow-y:scroll;
+            height:200px;
+            border:2px solid black;
+        }
+        #rumus1{
+            font-size:20px;
+            font-family:Georgia;
+            color:yellow;
+            font-weight:bold;
+            background-color:darkred;
+            border-radius:20px;
+            padding:5px;
+        }
+        #subjudul6{
+            padding:5px;
+            background-color:darkred;
+            justify-content: center;
+        }
+        #subjudul6 > div:nth-child(2){
+            margin-left:10px;
+            background-color:burlywood;
+        }
+        #proses4,#proses5,#proses6{
+            width:200px;
+            height:50px;
+            border:2px solid black;
+            border-radius:5px;
+            background-color:cadetblue;
+            font-size:40px;
+            font-family:'brush script mt';
+        }
+        #akibat{
+            display:grid;
+            grid-template-columns:auto auto;
+            margin:5px;
+        }
+        .akibat1{
+            border:2px solid black;
+            text-align:center;
+            margin:5px;
+        }
+        .akibat2{
+            color:cyan;
+            font-size:20px;
+            font-family:'comic sans ms';
+            text-align:center;
+            background-color:black;
+            font-weight:bold;
+        }
+        .akibat1:nth-child(n+3){
+            background-color:darkred;
+            height:400px;
+            padding:10px;
+        }
+        #soal1{
+            display:grid;
+            grid-template-columns:auto auto;
+            margin:5px;
+            background-color:darkolivegreen;
+        }
+        #soal1 div{
+            border:2px solid black;
+            margin:2px;
+            text-align:center;
+            font-size:20px;
+        }
+        #soal1 div:nth-child(1),#soal1 div:nth-child(2),#soal1 div:nth-child(3){
+            background-color:black;
+            color:cyan;
+        }
+        #soal1 div:nth-of-type(2n+4){
+            background-color:lightcoral;
+        }
+        #bukti1, #bukti2, #bukti3{
+            width:400px;
+            height:50px;
+            text-align:center;
+            font-size:20px;
+        }
+        #gabungan{
+            grid-column:1/span 2;
+            font-size:40px;
+            font-family:'comic sans ms';
+        }
+        #soal2{
+            display:grid;
+            grid-template-columns:auto auto;
+            border:2px solid black;
+            margin:3px;
+        }
+        #soal2 > div > div{
+            visibility:hidden;
+            border:2px solid black;
+        }
+        .keterangan11{
+            display:none;
+        }
+    </style>
+    <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        var params = {"id":"ggbApplet","appName": "classic", "width": 600, "height": 400, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false };
+        var applet = new GGBApplet('5.0',params);
+        var params1 = {"id":"ggbApplet1","appName": "classic", "width": 600, "height": 400, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false };
+        var applet1 = new GGBApplet('5.0',params1);
+        var params2 = {"id":"ggbApplet2","appName": "classic", "width": 600, "height": 400, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false };
+        var applet2 = new GGBApplet('5.0',params2);
+        var params3 = {"id":"ggbApplet3","appName": "classic", "width": 600, "height": 400, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false };
+        var applet3 = new GGBApplet('5.0',params3);
+        var params4 = {"id":"ggbApplet4","appName": "classic", "width": 1200, "height": 600, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true };
+        var applet4 = new GGBApplet('5.0',params4);
+        var params5 = {"id":"ggbApplet5","appName": "classic", "width": 600, "height": 600, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true };
+        var applet5 = new GGBApplet('5.0',params5);
+        var params6 = {"id":"ggbApplet6","appName": "classic", "width": 600, "height": 400, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true };
+        var applet6 = new GGBApplet('5.0',params6);
+        var params7 = {"id":"ggbApplet7","appName": "classic", "width": 600, "height": 400, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true };
+        var applet7 = new GGBApplet('5.0',params7);
+        window.onload=function(){
+          applet.inject('ggb-element')
+          applet1.inject('ggb-element1')
+          applet2.inject('ggb-element2')
+          applet3.inject('ggb-element3')
+          applet4.inject('ggb-element4')
+          applet5.inject('ggb-element5')
+          applet6.inject('ggb-element6')
+          applet7.inject('ggb-element7')
+      };
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.js" integrity="sha512-1kNZVA50gKlorLAWU83+SdOAUwABzfFFQ4WuOAZTeS/UhNhnm9zU7rDv/Q5NEzSnr5u2L6uhR/+8icjjmHjSnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css" integrity="sha512-J8je2SgrCzA7hNBeiCJiA6oETHTTdp3We3EriOgJp6POycGLcDXj5dSwWlAPQcYGeaQ4N3uf30aOg/Nt5pxW2g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="navigation.js"></script>
+
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+
+</head>
+<body>
+    <div id="judul">Trigonometri</div>
+    <div id="subjudul1"><div style="font-family:'comic sans ms'; font-size:20px;color:black;font-size:bold;border:2px solid black;padding:5px;width:300px;text-align:center;border-radius:10px;background-color:pink">Prasyarat yang perlu dikuasai</div>
+        <ol>
+            <li><a href="https://id.wikipedia.org/wiki/Segitiga_siku-siku">Segitiga siku-siku</a></li>
+            <li><a href="https://www.pijarbelajar.id/blog/kekongruenan-dan-kesebangunan">Kesebangunan dan Kongruen</a></li>
+            <li><a href="https://id.wikipedia.org/wiki/Teorema_Pythagoras">Teorema Pythagoras</a></li>
+            <li><a href="https://id.wikipedia.org/wiki/Kesebandingan_(matematika)">Perbandingan Senilai</a></li>
+            <li><a href="https://id.wikipedia.org/wiki/Segitiga">Jumlah sudut segitiga adalah 180<sup>o</sup></a></li>
+        </ol>
+    </div>
+    <div id="posisi" style="background-color:orange;padding:5px;">
+        <div id="ggb-element"></div>
+        <div id="posisi2">
+            <div><input id="tombol1" class="bag1" type="button" value="tampilkan gambar"></div>
+            <div><input id="depan" class="bag1" type="button" value="depan"></div>
+            <div><input id="samping" class="bag1" type="button" value="samping"></div>
+            <div><input id="miring" class="bag1" type="button" value="miring"></div>
+            <div><input id="perbandingan" class="bag1" type="button" value="Perbandingan"></div>
+            <div id="rumus"></div>
+        </div>
+    </div>
+    <div style="text-align:center">
+        <div style="background-color:orange;margin-top:10px;"><input id="latihan" type="button" value="latihan"></div>
+        <div id="posisi3">
+            <input class="latihan_trig" type="button" value="sinus">
+            <input class="latihan_trig" type="button" value="cosinus">
+            <input class="latihan_trig" type="button" value="tangen">
+        </div>
+        <div id="posisi4">
+            <div class="latihan1"></div><div class="latihan1"></div><div class="latihan1"></div>
+        </div>
+    </div>
+    <div id="subjudul2">
+        <div style="font-family:'comic sans ms';font-size:30px;font-weight:bold;">Sudut-sudut Istimewa</div>
+        <div style="font-family:broadway;font-size:20px;">Sudut 30<sup>o</sup> </div>
+        <div style="display:flex;">
+            <div id="ggb-element1"></div>
+            <div>
+                <input id="proses1" type="button" value="proses">
+                <input id="hapus" type="button" value="hapus">
+                <div id="keterangan1"></div>
+            </div>
+        </div>
+    </div>
+    <div id="subjudul3">
+        <div style="font-family:broadway;font-size:20px;">Sudut 45<sup>o</sup></div>
+        <div style="display:flex">
+            <div id="ggb-element2"></div>
+            <div><input id="proses2" type="button" value="proses">
+                <div id="keterangan2"></div>
+            </div>
+        </div>
+    </div>
+    <div id="subjudul4"></div>
+        <div style="font-family:broadway;font-size:20px;">Sudut 60<sup>o</sup></div>
+        <div style="display:flex">
+            <div id="ggb-element3"></div>
+            <div><input id="proses3" type="button" value="proses">
+                <div id="keterangan3"></div>
+            </div>
+        </div>
+    </div>
+    <div id="subjudul5">
+        <div style="font-family:broadway;font-size:20px;text-align:center;margin:10px;color:cyan">Tabel Sudut Istimewa</div>
+        <table style="border:2px solid black;width:100%;background-color:green">
+            <th>
+                <tr style="font-family:'cooper black';">
+                    <td class="warna">Sudut</td>
+                    <td class="warna">Sinus</td>
+                    <td class="warna">Cosinus</td>
+                    <td class="warna">Tangen</td>
+                </tr>
+            </th>
+            <tr>
+                <td>0<sup>o</sup></td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>30<sup>o</sup></td>
+                <td>\[\frac{1}{2}\]</td>
+                <td>\[\frac{1}{2}\sqrt{3}\]</td>
+                <td>\[\frac{1}{3}\sqrt{3}\]</td>
+            </tr>
+            <tr>
+                <td>45<sup>o</sup></td>
+                <td>\[\frac{1}{2}\sqrt{2}\]</td>
+                <td>\[\frac{1}{2}\sqrt{2}\]</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>60<sup>o</sup></td>
+                <td>\[\frac{1}{2}\sqrt{3}\]</td>
+                <td>\[\frac{1}{2}\]</td>
+                <td>\[\sqrt{3}\]</td>
+            </tr>
+            <tr>
+                <td>90<sup>o</sup></td>
+                <td>1</td>
+                <td>0</td>
+                <td>\[\sim\]</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <div style="text-align:center;font-size:30px;color:cyan;margin:10px;">Contoh Soal</div>
+        <div><iframe src="http://repository.radenintan.ac.id/11032/1/Imam%20Khoiruddin%20-%20Trigonometri.pdf" width="100%" height="500"></iframe></div>
+        <div style="text-align:center;font-size:30px;color:cyan;margin:10px;">Pembahasan</div>
+        <div style="padding-left:80px;border:1px solid black"><div id="ggb-element4" ></div></div>
+        <div style="text-align:center"><input type="text" id="soal"></div>
+        <div id="keterangan4"></div>
+    </div>
+    <div>
+        <div style="font-family:'comic sans ms';font-size:30px;color:cyan;background-color:black;padding:5px;margin:5px;border-radius:10px;">Invers Fungsi Trigonometri</div>
+        <div id="rumus1">
+            <div>\[\csc{\alpha}=\frac{1}{\sin{\alpha}}\]</div>
+            <div>\[\sec{\alpha}=\frac{1}{\cos{\alpha}}\]</div>
+            <div>\[\cot{\alpha}=\frac{1}{\tan{\alpha}}\]</div>
+        </div>
+    </div>
+    <div>
+        <div style="font-family:'comic sans ms';font-size:30px;color:cyan;background-color:black;padding:5px;margin:5px;border-radius:10px;text-align:center">Rumus Identitas</div>
+        <div style="font-family:'comic sans ms';font-size:20px;color:cyan;background-color:black;padding:5px;margin:5px;border-radius:10px;">Rumus Identitas:\[\sin^{2}{\alpha}+\cos^{2}{\alpha}=1\]</div>
+    </div>
+    <div>
+        <div id="subjudul6" style="display:flex">
+            <div id="ggb-element5"></div>
+            <div style="border:2px solid black;width:40%;">
+                <div style="text-align:center;padding:10px"><input id="proses4" type="button" value="proses"></div>
+                <div style="height:400px;overflow-y:auto"><div id="keterangan5"></div></div>
+            </div>
+        </div>
+    </div>
+    <div id="akibat">
+        <div class="akibat1 akibat2">Buktikan Rumus: \[\tan^{2}{\alpha}+1=\sec^{2}{\alpha}\]</div>
+        <div class="akibat1 akibat2">Buktikan Rumus: \[\cot^{2}{\alpha}+1=\csc^{2}{\alpha}\]</div>
+        <div class="akibat1">
+            <input type="button" id="proses5" value="proses">
+            <div style="height:300px;overflow-y:auto;margin-top:10px"><div id="keterangan6"></div></div>
+        </div>
+        <div class="akibat1">
+            <input type="button" id="proses6"value="proses">
+            <div style="height:300px;overflow-y:auto;margin-top:10px"><div id="keterangan7"></div></div>
+        </div>
+    </div>
+    <div id="soal1">
+        <div id="gabungan">Latihan</div>
+        <div>Soal</div>
+        <div>Pembahasan</div>
+        <div>\[1-\frac{\cos^{2}{\alpha}}{1+\sin{\alpha}}=\sin{\alpha}\]</div>
+        <div>
+            <input type="text" id="bukti1">
+            <div><div id="keterangan8"></div></div>
+        </div>
+        <div>\[\sin{\alpha}\cos{\alpha}\tan{\alpha}=(1-\cos{\alpha})(1+\cos{\alpha})\]</div>
+        <div>
+            <input type="text" id="bukti2">
+            <div><div id="keterangan9"></div></div>
+        </div>
+        <div>\[\sin{\alpha}\tan{\alpha}+\cos{\alpha}=\sec{\alpha}\]</div>
+        <div>
+            <input type="text" id="bukti3">
+            <div><div id="keterangan10"></div></div>
+        </div>
+    </div>
+    <div style="display:flex">
+        <div id="ggb-element6"></div>
+        <div style="border:2px solid black;width:60%">
+            <input type="button" value="proses" id="proses7">
+            <div id="soal2">
+                <div class="kelompok1"><div class="rumus2" style="background-color:yellow">\[\sin{\alpha}=\frac{y}{z}\]</div></div>
+                <div class="kelompok1"><div class="rumus2" style="background-color:cyan">\[\sin{(90^{o}-\alpha)}=\frac{x}{z}\]</div></div>
+                <div class="kelompok1"><div class="rumus2" style="background-color:cyan">\[\cos{\alpha}=\frac{x}{z}\]</div></div>
+                <div class="kelompok1"><div class="rumus2" style="background-color:yellow">\[\cos{(90^{o}-\alpha)}=\frac{y}{z}\]</div></div>
+                <div class="kelompok1"><div class="rumus2" style="background-color:magenta">\[\tan{\alpha}=\frac{y}{x}\]</div></div>
+                <div class="kelompok1"><div class="rumus2" style="background-color:magenta">\[\tan{(90^{o}-\alpha)}=\frac{x}{y}\]</div></div>
+                <div class="kelompok1"><div class="rumus2" style="grid-column:1/span 2" style="background-color:cyan">\[\sin{(90^{o}-\alpha)}=\cos{\alpha}\]</div></div>
+                <div class="kelompok1"><div class="rumus2" style="grid-column:1/span 2" style="background-color:yellow">\[\cos{(90^{o}-\alpha)}=\sin{\alpha}\]</div></div>
+                <div class="kelompok1"><div class="rumus2" style="grid-column:1/span 2" style="background-color:magenta">\[\tan{(90^{o}-\alpha)}=\cot{\alpha}\]</div></div>
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;margin-top:10px;">
+        <div id="ggb-element7"></div>
+        <div >
+            <div><input id="tampil1" type="button" value="Tampilkan"></div>
+            <div><input class="kuadran" type="button" value="Kuadran I"></div>
+            <div class="keterangan11">
+                \[Interval\;0\leq\alpha\leq\frac{\pi}{2}\;\;(+x,+y,+z)\]
+                \[nilai\;positif\;\sin{\alpha}\]
+                \[nilai\;positif\;\cos{\alpha}\]
+                \[nilai\;positif\;\tan{\alpha}\]
+            </div>
+            <div><input class="kuadran" type="button" value="Kuadran II"></div>
+            <div class="keterangan11">
+                \[Interval\;\frac{\pi}{2}&lt;\alpha\leq\pi\;\;(-x,+y,+z)\]
+                \[nilai\;positif\;\sin{\alpha}\]
+                \[nilai\;negatif\;\cos{\alpha}\]
+                \[nilai\;negatif\;\tan{\alpha}\]
+            </div>
+            <div><input class="kuadran" type="button" value="Kuadran III"></div>
+            <div class="keterangan11">
+                \[Interval\;\pi&lt;\alpha\leq\frac{3\pi}{2}\;\;(-x,-y,+z)\]
+                \[nilai\;negatif\;\sin{\alpha}\]
+                \[nilai\;negatif\;\cos{\alpha}\]
+                \[nilai\;positif\;\tan{\alpha}\]
+            </div>
+            <div><input class="kuadran" type="button" value="Kuadran IV"></div>
+            <div class="keterangan11">
+                \[Interval\;\frac{3\pi}{2}\pi&lt;\alpha\leq\;2\pi\;\;(+x,-y,+z)\]
+                \[nilai\;negatif\;\sin{\alpha}\]
+                \[nilai\;positif\;\cos{\alpha}\]
+                \[nilai\;positif\;\tan{\alpha}\]
+            </div>
+        </div>
+    </div>
+    <div>
+        <iframe src="Aplikasi turunan.html" width="100%" height="500"></iframe>
+    </div>
+    <script>
+        var tombol1 = document.getElementById("tombol1")
+        var depan = document.getElementById("depan")
+        var samping = document.getElementById("samping")
+        var miring = document.getElementById("miring")
+        var perbandingan = document.getElementById("perbandingan")
+        var rumus = document.getElementById("rumus")
+        var latihan_trig = document.getElementsByClassName("latihan_trig")
+        var kontrol = 0
+        var latihan = document.getElementById("latihan")
+        var latihan1 = document.getElementsByClassName("latihan1")
+        var kontrol1 = 0
+        var proses1 = document.getElementById("proses1")
+        var keterangan1 = document.getElementById("keterangan1")
+        var menulis = ""
+        var hapus = document.getElementById("hapus")
+        var kontrol2 = 0
+        var proses2 = document.getElementById("proses2")
+        var menulis1 =""
+        var keterangan2 = document.getElementById("keterangan2")
+        var proses3 = document.getElementById("proses3")
+        var menulis2 = ""
+        var kontrol3 = 0
+        var keterangan3 = document.getElementById("keterangan3")
+        var soal = document.getElementById("soal")
+        var keterangan4 = document.getElementById("keterangan4")
+        var proses4 = document.getElementById("proses4")
+        var keterangan5 = document.getElementById("keterangan5")
+        var kontrol4 = 0
+        var menulis3=""
+        var proses5 = document.getElementById("proses5")
+        var keterangan6 = document.getElementById("keterangan6")
+        var kontrol5 = 0
+        var menulis4 = ""
+        var proses6 = document.getElementById("proses6")
+        var keterangan7 = document.getElementById("keterangan7")
+        var kontrol6 = 0
+        var menulis5 = ""
+        var keterangan8 = document.getElementById("keterangan8")
+        var menulis6=""
+        var bukti1 = document.getElementById("bukti1")
+        var keterangan9 = document.getElementById("keterangan9")
+        var menulis7=""
+        var bukti2 = document.getElementById("bukti2")
+        var keterangan10 = document.getElementById("keterangan10")
+        var menulis8=""
+        var bukti3 = document.getElementById("bukti3")
+        var proses7 = document.getElementById("proses7")
+        var rumus2 = document.querySelectorAll(".rumus2")
+        var kelompok1 = document.getElementsByClassName("kelompok1")
+        var tampil1 = document.getElementById("tampil1")
+        var keterangan11=document.querySelectorAll(".keterangan11")
+        var kuadran=document.querySelectorAll(".kuadran")
+        tombol1.addEventListener("click",()=>{
+            ggbApplet.evalCommand("A=(0,0)")
+            ggbApplet.setPointSize("A",6)
+            ggbApplet.setColor("A",255,0,0)
+            ggbApplet.evalCommand("B=(6,0)")
+            ggbApplet.setPointSize("B",6)
+            ggbApplet.setColor("B",0,125,0)
+            ggbApplet.evalCommand("C=(0,8)")
+            ggbApplet.setPointSize("C",6)
+            ggbApplet.setColor("C",125,125,0)
+            ggbApplet.setAxesVisible(false,false)
+            ggbApplet.evalCommand("a=Segment(A,B)")
+            ggbApplet.evalCommand("b=Segment(A,C)")
+            ggbApplet.evalCommand("c=Segment(C,B)")
+            ggbApplet.evalCommand("d=Angle(C,B,A)")
+            ggbApplet.evalCommand("f=Angle(B,A,C)")
+            ggbApplet.setLabelVisible("d",false)
+            ggbApplet.setLabelVisible("f",false)
+            ggbApplet.deleteObject("e")
+            ggbApplet.deleteObject("g")
+            ggbApplet.deleteObject("tulis1")
+            ggbApplet.deleteObject("tulis2")
+            ggbApplet.deleteObject("tulis3")
+            ggbApplet.setColor("b",0,0,0)
+            ggbApplet.setLineThickness("b",4)
+            ggbApplet.setColor("a",0,0,0)
+            ggbApplet.setLineThickness("a",4)
+            ggbApplet.setColor("c",0,0,0)
+            ggbApplet.setLineThickness("c",4)
+            ggbApplet.setCoordSystem(-1,9,-1,9)
+        })
+        depan.addEventListener("click",()=>{
+            ggbApplet.evalCommand("e=Vector((0,4),(6,0))")
+            ggbApplet.setColor("b",0,0,255)
+            ggbApplet.setLineThickness("b",6)
+            ggbApplet.evalCommand('tulis1=Text("de",(0,4))')
+        })
+        samping.addEventListener("click",()=>{
+            ggbApplet.setColor("a",0,255,255)
+            ggbApplet.setLineThickness("a",6)
+            ggbApplet.evalCommand('tulis2=Text("sa",(3,0))')
+        })
+        miring.addEventListener("click",()=>{
+            ggbApplet.setColor("c",255,0,255)
+            ggbApplet.setLineThickness("c",6)
+            ggbApplet.evalCommand("g=Vector((3,4),(0,0))")
+            ggbApplet.evalCommand('tulis3=Text("mi",(3,4))')
+        })
+        perbandingan.addEventListener("click",()=>{
+            kontrol +=1
+            if(kontrol%2==1){
+                rumus.innerHTML = katex.renderToString("\\sin{\\alpha}=\\frac{depan}{miring}\\;\\;\\cos{\\alpha}=\\frac{samping}{miring}\\;\\;\\tan{\\alpha}=\\frac{depan}{samping}")
+                rumus.style.display="block";
+            }else{
+                rumus.style.display="none";
+            }
+        })
+        latihan.addEventListener('click',()=>{
+            ggbApplet.evalCommand('tulis1=Text("8",(0,4))')
+            ggbApplet.evalCommand('tulis2=Text("6",(3,0))')
+            ggbApplet.evalCommand('tulis3=Text("10",(3,4))')
+            posisi3.style.display="block"
+        })
+        latihan_trig[0].addEventListener('click',()=>{
+            var masukan = prompt("masukan perbandingan").split("/")
+            if(masukan[0]/masukan[1]==8/10){
+                latihan1[0].innerHTML=katex.renderToString("\\sin{\\alpha}=\\frac{"+masukan[0]+"}{"+masukan[1]+"}\\;\\;Benar")
+                latihan1[0].style.backgroundColor="green"
+                latihan1[0].style.borderColor="black"
+                latihan1[0].style.display="block"
+            }else{
+                latihan1[0].innerHTML=katex.renderToString("\\sin{\\alpha}=\\frac{"+masukan[0]+"}{"+masukan[1]+"}\\;\\;Salah")
+                latihan1[0].style.backgroundColor="red"
+                latihan1[0].style.borderColor="black"
+                latihan1[0].style.display="block"
+            }
+            
+        })
+        latihan_trig[1].addEventListener('click',()=>{
+            var masukan = prompt("masukan perbandingan").split("/")
+            if(masukan[0]/masukan[1]==6/10){
+                latihan1[1].innerHTML=katex.renderToString("\\cos{\\alpha}=\\frac{"+masukan[0]+"}{"+masukan[1]+"}\\;\\;Benar")
+                latihan1[1].style.backgroundColor="green"
+                latihan1[1].style.borderColor="black"
+                latihan1[1].style.display="block"
+            }else{
+                latihan1[1].innerHTML=katex.renderToString("\\cos{\\alpha}=\\frac{"+masukan[0]+"}{"+masukan[1]+"}\\;\\;Salah")
+                latihan1[1].style.backgroundColor="red"
+                latihan1[1].style.borderColor="2px solid black"
+                latihan1[1].style.display="block"
+            }
+        })
+        latihan_trig[2].addEventListener('click',()=>{
+            var masukan = prompt("masukan perbandingan").split("/")
+            if(masukan[0]/masukan[1]==8/6){
+                latihan1[2].innerHTML=katex.renderToString("\\tan{\\alpha}=\\frac{"+masukan[0]+"}{"+masukan[1]+"}\\;\\;Benar")
+                latihan1[2].style.backgroundColor="green"
+                latihan1[2].style.border="2px solid black"
+                latihan1[2].style.display="block"
+            }else{
+                latihan1[2].innerHTML=katex.renderToString("\\tan{\\alpha}=\\frac{"+masukan[0]+"}{"+masukan[1]+"}\\;\\;Salah")
+                latihan1[2].style.backgroundColor="red"
+                latihan1[2].style.border="2px solid black"
+                latihan1[2].style.display="block"
+            }
+        })
+        proses1.addEventListener("click",()=>{
+            kontrol1+=1
+            ggbApplet1.setAxesVisible(false,false)
+            switch(kontrol1){
+                case 1:
+                    ggbApplet1.evalCommand("a=Segment((0,0),(6,0))")
+                    ggbApplet1.evalCommand("b=Segment((0,0),(0,6*tan(30*pi/180)))")
+                    ggbApplet1.evalCommand("c=Segment((6,0),(0,6*tan(30*pi/180)))")
+                    ggbApplet1.evalCommand("d=Angle((0,6*tan(30*pi/180)),(6,0),(0,0))")
+                    break
+                case 2:
+                    ggbApplet1.evalCommand("e=Angle((6,0),(0,0),(0,6*tan(30*pi/180)))")
+                    break
+                case 3: 
+                    ggbApplet1.evalCommand("f=Angle((0,0),(0,6*tan(30*pi/180)),(6,0))")
+                    break
+                case 4: 
+                    ggbApplet1.evalCommand('tulis1=Text("y",(0,3*tan(30*pi/180)))')
+                    ggbApplet1.evalCommand('tulis2=Text("x",(3,0))')
+                    ggbApplet1.evalCommand('tulis3=Text("z",(3,3*tan(30*pi/180)))')
+                    break
+                case 5:
+                    ggbApplet1.evalCommand("g=Segment((0,6*tan(30*pi/180)),(6*tan(30*pi/180)*tan(30*pi/180),0))")
+                    break
+                case 6: 
+                    ggbApplet1.evalCommand("h=Angle((0,0),(0,6*tan(30*pi/180)),(6*tan(30*pi/180)*tan(30*pi/180),0))")
+                    ggbApplet1.evalCommand("i=Angle((6*tan(30*pi/180)*tan(30*pi/180),0),(0,6*tan(30*pi/180)),(6,0))")
+                    ggbApplet1.deleteObject("f")
+                    break
+                case 7:
+                    ggbApplet1.evalCommand("j=Segment((6*tan(30*pi/180)*tan(30*pi/180),0),(3,3*tan(30*pi/180)))")
+                    break
+                case 8: 
+                    ggbApplet1.evalCommand('tulis4=Text("y",(1.5,4.5*tan(30*pi/180)))')
+                    break
+                case 9: 
+                    ggbApplet1.evalCommand('tulis5=Text("y",(4.5,1.5*tan(30*pi/180)))')
+                    break
+                case 10: 
+                    menulis += "<div>"+katex.renderToString("z=y+y=2y")+"</div>"
+                    keterangan1.innerHTML=menulis
+                    break
+                case 11: 
+                    menulis += "<div>"+katex.renderToString("x=\\sqrt{z^{2}-y^{2}}")+"</div>"
+                    keterangan1.innerHTML=menulis
+                    break
+                case 12: 
+                    menulis += "<div>"+katex.renderToString("x=\\sqrt{(2y)^{2}-y^{2}}=\\sqrt{4y^{2}-y^{2}}=\\sqrt{3y^{2}}=y\\sqrt{3}")+"</div>"
+                    keterangan1.innerHTML=menulis
+                    break
+                case 13: 
+                    menulis += "<div>"+katex.renderToString("\\sin{30^{o}}=\\frac{de}{mi}=\\frac{y}{z}=\\frac{y}{2y}=\\frac{1}{2}")+"</div>"
+                    keterangan1.innerHTML=menulis
+                    break
+                case 14: 
+                    menulis += "<div>"+katex.renderToString("\\cos{30^{o}}=\\frac{sa}{mi}=\\frac{x}{z}=\\frac{y\\sqrt{3}}{2y}=\\frac{1}{2}\\sqrt{3}")+"</div>"
+                    keterangan1.innerHTML=menulis
+                    break
+                case 15: 
+                    menulis += "<div>"+katex.renderToString("\\tan{30^{o}}=\\frac{de}{sa}=\\frac{y}{x}=\\frac{y}{x\\sqrt{3}}=\\frac{1}{3}\\sqrt{3}")+"</div>"
+                    keterangan1.innerHTML=menulis
+                    break
+            }
+            
+        })
+        hapus.addEventListener("click",()=>{
+            ggbApplet1.deleteObject("a")
+            ggbApplet1.deleteObject("b")
+            ggbApplet1.deleteObject("c")
+            ggbApplet1.deleteObject("d")
+            ggbApplet1.deleteObject("e")
+            ggbApplet1.deleteObject("f")
+            ggbApplet1.deleteObject("g")
+            ggbApplet1.deleteObject("h")
+            ggbApplet1.deleteObject("i")
+            ggbApplet1.deleteObject("j")
+            ggbApplet1.deleteObject("tulis1")
+            ggbApplet1.deleteObject("tulis2")
+            ggbApplet1.deleteObject("tulis3")
+            ggbApplet1.deleteObject("tulis4")
+            ggbApplet1.deleteObject("tulis5")
+            keterangan1.innerHTML=""
+            kontrol1=0
+            menulis=""
+        })
+        proses2.addEventListener("click",()=>{
+            kontrol2 +=1
+            ggbApplet2.setAxesVisible(false,false)
+            switch(kontrol2){
+                case 1:
+                    ggbApplet2.evalCommand("a=Segment((0,0),(6,0))")
+                    ggbApplet2.evalCommand("b=Segment((0,0),(0,6*tan(45*pi/180)))")
+                    ggbApplet2.evalCommand("c=Segment((6,0),(0,6*tan(45*pi/180)))")
+                    ggbApplet2.evalCommand("d=Angle((0,6*tan(45*pi/180)),(6,0),(0,0))")
+                    break
+                case 2:
+                    ggbApplet2.evalCommand("e=Angle((6,0),(0,0),(0,6*tan(45*pi/180)))")
+                    break
+                case 3: 
+                    ggbApplet2.evalCommand("f=Angle((0,0),(0,6*tan(45*pi/180)),(6,0))")
+                    break
+                case 4: 
+                    ggbApplet2.evalCommand('tulis1=Text("y",(0,3*tan(45*pi/180)))')
+                    ggbApplet2.evalCommand('tulis2=Text("x",(3,0))')
+                    ggbApplet2.evalCommand('tulis3=Text("z",(3,3*tan(45*pi/180)))')
+                    break
+                case 5:
+                    ggbApplet2.evalCommand("g=Segment((0,0),(3,3))")
+                    break
+                case 6: 
+                    ggbApplet2.evalCommand("h=Angle((0,6*tan(45*pi/180)),(3,3),(0,0))")
+                    break
+                case 7:
+                    menulis1 += "<div>"+katex.renderToString("x=y")+"</div>"
+                    keterangan2.innerHTML=menulis1
+                    break
+                case 8: 
+                    menulis1 += "<div>"+katex.renderToString("z=\\sqrt{x^{2}+y^{2}}")+"</div>"
+                    keterangan2.innerHTML=menulis1
+                    break
+                case 9: 
+                    menulis1 += "<div>"+katex.renderToString("z=\\sqrt{y^{2}+y^{2}}=\\sqrt{2y^{2}}=y\\sqrt{2}")+"</div>"
+                    keterangan2.innerHTML=menulis1
+                    break
+                case 10: 
+                    menulis1 += "<div>"+katex.renderToString("\\sin{45^{o}}=\\frac{de}{mi}=\\frac{y}{z}=\\frac{y}{y\\sqrt{2}}=\\frac{1}{2}\\sqrt{2}")+"</div>"
+                    keterangan2.innerHTML=menulis1
+                    break
+                case 11: 
+                    menulis1 += "<div>"+katex.renderToString("\\cos{45^{o}}=\\frac{sa}{mi}=\\frac{x}{z}=\\frac{y}{z}=\\frac{y}{y\\sqrt{2}}=\\frac{1}{2}\\sqrt{2}")+"</div>"
+                    keterangan2.innerHTML=menulis1
+                    break
+                case 12: 
+                    menulis1 += "<div>"+katex.renderToString("\\tan{45^{o}}=\\frac{de}{sa}=\\frac{y}{x}=\\frac{y}{y}=1")+"</div>"
+                    keterangan2.innerHTML=menulis1
+                    break
+            }
+        })
+        proses3.addEventListener("click",()=>{
+            kontrol3 +=1
+            ggbApplet3.setAxesVisible(false,false)
+            switch(kontrol3){
+                case 1:
+                    ggbApplet3.evalCommand("a=Segment((0,0),(4,0))")
+                    ggbApplet3.evalCommand("b=Segment((0,0),(0,4*tan(60*pi/180)))")
+                    ggbApplet3.evalCommand("c=Segment((4,0),(0,4*tan(60*pi/180)))")
+                    ggbApplet3.evalCommand("d=Angle((0,4*tan(60*pi/180)),(4,0),(0,0))")
+                    break
+                case 2:
+                    ggbApplet3.evalCommand("e=Angle((4,0),(0,0),(0,4*tan(30*pi/180)))")
+                    break
+                case 3: 
+                    ggbApplet3.evalCommand("f=Angle((0,0),(0,4*tan(60*pi/180)),(4,0))")
+                    break
+                case 4: 
+                    ggbApplet3.evalCommand('tulis1=Text("y",(0,2*tan(60*pi/180)))')
+                    ggbApplet3.evalCommand('tulis2=Text("x",(2,0))')
+                    ggbApplet3.evalCommand('tulis3=Text("z",(2,2*tan(60*pi/180)))')
+                    break
+                case 5:
+                    ggbApplet3.evalCommand("g=Segment((4,0),(0,4*tan(30*pi/180)))")
+                    break
+                case 6: 
+                    ggbApplet3.evalCommand("h=Angle((0,4*tan(30*pi/180)),(4,0),(0,0))")
+                    ggbApplet3.evalCommand("i=Angle((0,4*tan(60*pi/180)),(4,0),(0,4*tan(30*pi/180)))")
+                    ggbApplet3.deleteObject("d")
+                    break
+                case 7:
+                    ggbApplet3.evalCommand("j=Segment((0,4*tan(30*pi/180)),(2,2*tan(60*pi/180)))")
+                    break
+                case 8: 
+                    ggbApplet3.evalCommand("k=Angle((0,4*tan(30*pi/180)),(2,2*tan(60*pi/180)),(4,0))")
+                    break
+                case 9: 
+                    ggbApplet3.evalCommand('tulis4=Text("x",(3,tan(60*pi/180)))')
+                    break
+                case 10:
+                    ggbApplet3.evalCommand('tulis5=Text("x",(1,3*tan(60*pi/180)))')
+                    break
+                case 11: 
+                    menulis2 += "<div>"+katex.renderToString("z=x+x=2x")+"</div>"
+                    keterangan3.innerHTML=menulis2
+                    break
+                case 12: 
+                    menulis2 += "<div>"+katex.renderToString("y=\\sqrt{z^{2}-x^{2}}")+"</div>"
+                    keterangan3.innerHTML=menulis2
+                    break
+                case 13: 
+                    menulis2 += "<div>"+katex.renderToString("y=\\sqrt{(2x)^{2}-x^{2}}=\\sqrt{4x^{2}-x^{2}}=\\sqrt{3x^{2}}=x\\sqrt{3}")+"</div>"
+                    keterangan3.innerHTML=menulis2
+                    break
+                case 14: 
+                    menulis2 += "<div>"+katex.renderToString("\\sin{60^{o}}=\\frac{de}{mi}=\\frac{y}{z}=\\frac{x\\sqrt{3}}{2x}=\\frac{1}{2}\\sqrt{3}")+"</div>"
+                    keterangan3.innerHTML=menulis2
+                    break
+                case 15: 
+                    menulis2 += "<div>"+katex.renderToString("\\cos{60^{o}}=\\frac{sa}{mi}=\\frac{x}{z}=\\frac{x}{2x}=\\frac{1}{2}")+"</div>"
+                    keterangan3.innerHTML=menulis2
+                    break
+                case 16: 
+                    menulis2 += "<div>"+katex.renderToString("\\tan{60^{o}}=\\frac{de}{sa}=\\frac{y}{x}=\\frac{x\\sqrt{3}}{x}=\\sqrt{3}")+"</div>"
+                    keterangan3.innerHTML=menulis2
+                    break
+            }
+        })
+        soal.addEventListener("keydown",(event)=>{
+            if(event.key==="Enter"){
+                ggbApplet4.evalCommand(soal.value)
+                var kumpulan = ggbApplet4.getAllObjectNames()
+                var menuliskan=""
+                kumpulan.forEach(function(obj){
+                    menuliskan += "<div style='text-align:center;font-size:20px;border:1px solid blue;padding:2px;background-color:pink;margin-bottom:2px;'>"+ggbApplet4.getValueString(obj)+"</div>"
+                })
+                keterangan4.innerHTML=menuliskan
+            }
+        })
+        proses4.addEventListener("click",()=>{
+            kontrol4 +=1
+            switch(kontrol4){
+                case 1: 
+                    ggbApplet5.setAxesVisible(false,false)
+                    ggbApplet5.evalCommand("A=(-2,-2)")
+                    ggbApplet5.evalCommand("B=(6,-2)")
+                    ggbApplet5.evalCommand("C=(-2,4)")
+                    ggbApplet5.evalCommand("a=Segment(A,B)")
+                    ggbApplet5.evalCommand("b=Segment(A,C)")
+                    ggbApplet5.evalCommand("c=Segment(B,C)")
+                    break
+                case 2: 
+                    ggbApplet5.evalCommand("d=Angle(C,B,A)")
+                    ggbApplet5.evalCommand("e=Angle(B,A,C)")
+                    ggbApplet5.setLabelVisible("d",false)
+                    ggbApplet5.setLabelVisible("e",false)
+                    break
+                case 3: 
+                    ggbApplet5.evalCommand('f=Text("x",(2,-2),true,true)')
+                    ggbApplet5.evalCommand('g=Text("y",(-2,1),true,true)')
+                    ggbApplet5.evalCommand('h=Text("z",(2,1),true,true)')
+                    break
+                case 4: 
+                    menulis3 += "<div>"+katex.renderToString("Teorema\\;Pythagoras\\\\z^{2}=x^{2}+y^{2}")+"</div>"
+                    keterangan5.innerHTML = menulis3
+                    break
+                case 5: 
+                    menulis3 += "<div>"+katex.renderToString("Buktikan\\\\\\sin^{2}{\\alpha}+\\cos^{2}{\\alpha}=1")+"</div>"
+                    keterangan5.innerHTML = menulis3
+                    break
+                case 6:
+                    menulis3 += "<div>"+katex.renderToString("Diketahui\\;bahwa\\;\\sin{\\alpha}=\\frac{depan}{miring}=\\frac{y}{z}")+"</div>"
+                    keterangan5.innerHTML = menulis3 
+                    break
+                case 7: 
+                    menulis3 += "<div>"+katex.renderToString("\\sin^{2}{\\alpha}+\\cos^{2}{\\alpha}=(\\frac{y}{z})^{2}+\\cos^{2}{\\alpha}")+"</div>"
+                    keterangan5.innerHTML = menulis3 
+                    break
+                case 8: 
+                    menulis3 += "<div>"+katex.renderToString("Diketahui\\;bahwa\\;\\cos{\\alpha}=\\frac{samping}{miring}=\\frac{x}{z}")+"</div>"
+                    keterangan5.innerHTML = menulis3 
+                    break
+                case 9: 
+                    menulis3 += "<div>"+katex.renderToString("(\\frac{y}{z})^{2}+\\cos^{2}{\\alpha}=(\\frac{y}{z})^{2}+(\\frac{x}{z})^{2}")+"</div>"
+                    keterangan5.innerHTML = menulis3 
+                    break
+                case 10: 
+                    menulis3 += "<div>"+katex.renderToString("(\\frac{y}{z})^{2}+(\\frac{x}{z})^{2}=\\frac{y^{2}}{z^{2}}+\\frac{x^{2}}{z^{2}}")+"</div>"
+                    keterangan5.innerHTML = menulis3 
+                    break
+                case 11: 
+                    menulis3 += "<div>"+katex.renderToString("karena\\;penyebutnya\\;sama\\;maka\\;\\sin^{2}{\\alpha}+\\cos^{2}{\\alpha}=\\frac{y^{2}+x^{2}}{z^{2}}")+"</div>"
+                    keterangan5.innerHTML = menulis3
+                    break
+                case 12: 
+                    menulis3 += "<div>"+katex.renderToString("diketahui\\;bahwa\\;z^{2}=y^{2}+x^{2}\\;maka\\;\\sin^{2}{\\alpha}+\\cos^{2}{\\alpha}=\\frac{z^2}{z^{2}}")+"</div>"
+                    keterangan5.innerHTML = menulis3
+                    break
+                case 13: 
+                    menulis3 += "<div>"+katex.renderToString("terbukti\\;bahwa\\;\\sin^{2}{\\alpha}+\\cos^{2}{\\alpha}=1")+"</div>"
+                    keterangan5.innerHTML = menulis3
+                    break
+            }
+        })
+        proses5.addEventListener("click",()=>{
+            kontrol5 +=1
+            switch(kontrol5){
+                case 1: 
+                    menulis4 += "<div>"+katex.renderToString("Buktikan\\;bahwa\\;\\tan^{2}{\\alpha}+1=\\sec^{2}{\\alpha}")+"<div>"
+                    keterangan6.innerHTML=menulis4
+                    break
+                case 2: 
+                    menulis4 += "<div>"+katex.renderToString("diketahui\\;bahwa\\;\\tan{\\alpha}=\\frac{depan}{samping}=\\frac{y}{x}")+"<div>"
+                    keterangan6.innerHTML=menulis4
+                    break 
+                case 3: 
+                    menulis4 += "<div>"+katex.renderToString("\\tan^{2}{\\alpha}+1=(\\frac{y}{x})^{2}+1")+"<div>"
+                    keterangan6.innerHTML=menulis4
+                    break 
+                case 4: 
+                    menulis4 += "<div>"+katex.renderToString("\\tan^{2}{\\alpha}+1=\\frac{y^{2}}{x^{2}}+1")+"<div>"
+                    keterangan6.innerHTML=menulis4
+                    break 
+                case 5: 
+                    menulis4 += "<div>"+katex.renderToString("\\tan^{2}{\\alpha}+1=\\frac{y^{2}}{x^{2}}+\\frac{x^{2}}{x^{2}}")+"<div>"
+                    keterangan6.innerHTML=menulis4
+                    break 
+                case 6: 
+                    menulis4 += "<div>"+katex.renderToString("\\tan^{2}{\\alpha}+1=\\frac{y^{2}+x^{2}}{x^{2}}")+"<div>"
+                    keterangan6.innerHTML=menulis4
+                    break 
+                case 7: 
+                    menulis4 += "<div>"+katex.renderToString("\\tan^{2}{\\alpha}+1=\\frac{z^2}{x^{2}}")+"<div>"
+                    keterangan6.innerHTML=menulis4
+                    break 
+                case 8: 
+                    menulis4 += "<div>"+katex.renderToString("\\tan^{2}{\\alpha}+1=\\frac{1}{\\frac{x^{2}}{z^{2}}}")+"<div>"
+                    keterangan6.innerHTML=menulis4
+                    break 
+                case 9: 
+                    menulis4 += "<div>"+katex.renderToString("diketahui\\;\\cos{\\alpha}=\\frac{x}{z}")+"<div>"
+                    keterangan6.innerHTML=menulis4
+                    break
+                case 10: 
+                    menulis4 += "<div>"+katex.renderToString("\\tan^{2}{\\alpha}+1=\\frac{1}{\\cos^{2}{\\alpha}}")+"<div>"
+                    keterangan6.innerHTML=menulis4
+                    break 
+                case 11: 
+                    menulis4 += "<div>"+katex.renderToString("\\tan^{2}{\\alpha}+1=\\sec^{2}{\\alpha}")+"<div>"
+                    keterangan6.innerHTML=menulis4
+                    break 
+            }
+        })
+        proses6.addEventListener("click",()=>{
+            kontrol6 +=1
+            switch(kontrol6){
+                case 1: 
+                    menulis5 += "<div>"+katex.renderToString("Buktikan\\;bahwa\\;\\cot^{2}{\\alpha}+1=\\csc^{2}{\\alpha}")+"<div>"
+                    keterangan7.innerHTML=menulis5
+                    break
+                case 2: 
+                    menulis5 += "<div>"+katex.renderToString("diketahui\\;bahwa\\;\\cot{\\alpha}=\\frac{samping}{depan}=\\frac{x}{y}")+"<div>"
+                    keterangan7.innerHTML=menulis5
+                    break 
+                case 3: 
+                    menulis5 += "<div>"+katex.renderToString("\\cot^{2}{\\alpha}+1=(\\frac{x}{y})^{2}+1")+"<div>"
+                    keterangan7.innerHTML=menulis5
+                    break 
+                case 4: 
+                    menulis5 += "<div>"+katex.renderToString("\\cot^{2}{\\alpha}+1=\\frac{x^{2}}{y^{2}}+1")+"<div>"
+                    keterangan7.innerHTML=menulis5
+                    break 
+                case 5: 
+                    menulis5 += "<div>"+katex.renderToString("\\cot^{2}{\\alpha}+1=\\frac{x^{2}}{y^{2}}+\\frac{y^{2}}{y^{2}}")+"<div>"
+                    keterangan7.innerHTML=menulis5
+                    break 
+                case 6: 
+                    menulis5 += "<div>"+katex.renderToString("\\cot^{2}{\\alpha}+1=\\frac{x^{2}+y^{2}}{y^{2}}")+"<div>"
+                    keterangan7.innerHTML=menulis5
+                    break 
+                case 7: 
+                    menulis5 += "<div>"+katex.renderToString("\\cot^{2}{\\alpha}+1=\\frac{z^2}{y^{2}}")+"<div>"
+                    keterangan7.innerHTML=menulis5
+                    break 
+                case 8: 
+                    menulis5 += "<div>"+katex.renderToString("\\cot^{2}{\\alpha}+1=\\frac{1}{\\frac{y^{2}}{z^{2}}}")+"<div>"
+                    keterangan7.innerHTML=menulis5
+                    break 
+                case 9: 
+                    menulis5 += "<div>"+katex.renderToString("diketahui\\;\\sin{\\alpha}=\\frac{y}{z}")+"<div>"
+                    keterangan7.innerHTML=menulis5
+                    break
+                case 10: 
+                    menulis5 += "<div>"+katex.renderToString("\\cot^{2}{\\alpha}+1=\\frac{1}{\\sin^{2}{\\alpha}}")+"<div>"
+                    keterangan7.innerHTML=menulis5
+                    break 
+                case 11: 
+                    menulis5 += "<div>"+katex.renderToString("\\cot^{2}{\\alpha}+1=\\csc^{2}{\\alpha}")+"<div>"
+                    keterangan7.innerHTML=menulis5
+                    break 
+            }
+        })
+        bukti1.addEventListener("keydown",(event)=>{
+            if(event.key==="Enter"){
+                menulis6 += "<div style='background-color:cyan;color:black'>"+katex.renderToString(bukti1.value)+"</div>"
+                keterangan8.innerHTML = menulis6
+            }
+        })
+        bukti2.addEventListener("keydown",(event)=>{
+            if(event.key==="Enter"){
+                menulis7 += "<div style='background-color:cyan;color:black'>"+katex.renderToString(bukti2.value)+"</div>"
+                keterangan9.innerHTML = menulis7
+            }
+        })    
+        bukti3.addEventListener("keydown",(event)=>{
+            if(event.key==="Enter"){
+                menulis8 += "<div style='background-color:cyan;color:black'>"+katex.renderToString(bukti3.value)+"</div>"
+                keterangan10.innerHTML = menulis8
+            }
+        })
+        proses7.addEventListener("click",()=>{
+            ggbApplet6.setAxesVisible(false,false)
+            ggbApplet6.evalCommand("A=(-2,0)")
+            ggbApplet6.evalCommand("B=(6,0)")
+            ggbApplet6.evalCommand("C=(-2,6)")
+            ggbApplet6.evalCommand('i=Text("x",(2,0),true,true)')
+            ggbApplet6.evalCommand('j=Text("y",(-2,3),true,true)')
+            ggbApplet6.evalCommand('k=Text("z",(2,3),true,true)')
+            ggbApplet6.evalCommand("a=Segment(A,B)")
+            ggbApplet6.evalCommand("b=Segment(B,C)")
+            ggbApplet6.evalCommand("c=Segment(A,C)")
+            ggbApplet6.evalCommand('d=Text("\\alpha",B+(-1,0.5),true,true)')
+            ggbApplet6.setLabelVisible("B",false)
+            ggbApplet6.setLabelVisible("A",false)
+            ggbApplet6.setLabelVisible("C",false)
+            ggbApplet6.evalCommand("e=Angle(C,B,A)")
+            ggbApplet6.setLabelVisible("e",false)
+            ggbApplet6.evalCommand("f=Angle(B,A,C)")
+            ggbApplet6.evalCommand("g=Angle(A,C,B)")
+            ggbApplet6.setLabelVisible("e",false)
+            ggbApplet6.setLabelVisible("f",false)
+            ggbApplet6.setLabelVisible("g",false)
+            ggbApplet6.evalCommand('h=Text("(90^{0}-\\alpha)",C+(0,-1),true,true)')
+        })
+        kelompok1[0].addEventListener("click",()=>{
+            rumus2[0].style.visibility="visible"
+        })
+        kelompok1[1].addEventListener("click",()=>{
+            rumus2[1].style.visibility="visible"
+        })
+        kelompok1[2].addEventListener("click",()=>{
+            rumus2[2].style.visibility="visible"
+        })
+        kelompok1[3].addEventListener("click",()=>{
+            rumus2[3].style.visibility="visible"
+        })
+        kelompok1[4].addEventListener("click",()=>{
+            rumus2[4].style.visibility="visible"
+        })
+        kelompok1[5].addEventListener("click",()=>{
+            rumus2[5].style.visibility="visible"
+        })
+        kelompok1[6].addEventListener("click",()=>{
+            rumus2[6].style.visibility="visible"
+        })
+        kelompok1[7].addEventListener("click",()=>{
+            rumus2[7].style.visibility="visible"
+        })
+        kelompok1[8].addEventListener("click",()=>{
+            rumus2[8].style.visibility="visible"
+        })
+        tampil1.addEventListener("click",()=>{
+            ggbApplet7.evalCommand("a=Circle((0,0),3)")
+            ggbApplet7.evalCommand('b=Text("I",(1.5,1.5),true,true)')
+            ggbApplet7.evalCommand('c=Text("II",(-1.5,1.5),true,true)')
+            ggbApplet7.evalCommand('d=Text("III",(-1.5,-1.5),true,true)')
+            ggbApplet7.evalCommand('e=Text("IV",(1.5,-1.5),true,true)')
+        })
+        function sembunyi(){
+            keterangan11.forEach((event)=>{
+                event.style.display="none"
+                event.style.border="2px solid black"
+                event.style.borderRadius="5px"
+                event.style.backgroundColor="yellow"
+                event.style.margin="10px"
+            })
+        }
+        kuadran[0].addEventListener("click",()=>{
+            sembunyi()
+            keterangan11[0].style.display="block"
+            ggbApplet7.evalCommand("f=CircularSector((0,0),(3,0),(0,3))")
+            ggbApplet7.setColor("f",0,255,255)
+        })
+        kuadran[1].addEventListener("click",()=>{
+            sembunyi()
+            keterangan11[1].style.display="block"
+            ggbApplet7.evalCommand("f=CircularSector((0,0),(0,3),(-3,0))")
+            ggbApplet7.setColor("f",0,255,255)
+        })
+        kuadran[2].addEventListener("click",()=>{
+            sembunyi()
+            keterangan11[2].style.display="block"
+            ggbApplet7.evalCommand("f=CircularSector((0,0),(-3,0),(0,-3))")
+            ggbApplet7.setColor("f",0,255,255)
+        })
+        kuadran[3].addEventListener("click",()=>{
+            sembunyi()
+            keterangan11[3].style.display="block"
+            ggbApplet7.evalCommand("f=CircularSector((0,0),(0,-3),(3,0))")
+            ggbApplet7.setColor("f",0,255,255)
+        })
+    </script>
+</body>
+</html>
